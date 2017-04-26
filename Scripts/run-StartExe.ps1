@@ -1,6 +1,10 @@
-import-module R:\Projects-Ruusty\PSStartExeWithOutput\StartExeWithOutput\StartExeWithOutput\bin\Release\StartExeWithOutput.dll -verbose
+$(get-module StartExeWithOutput).ExportedCommands.Keys | % { get-help $_ }
 
-Start-ExeWithOutput -filepath "sqlplus.exe" -verbose
+import-module $(join-path $PSScriptRoot "..\StartExeWithOutput\StartExeWithOutput\bin\Release\StartExeWithOutput.dll") -verbose
+
 start-transcript rgh.txt -append
+Start-ExeWithOutput -filepath "sqlplus.exe" -ArgumentList @("arg01","arg02")-verbose
+Stop-Transcript
+Remove-Module StartExeWithOutput
 
-  $(get-module Ruusty.Powershell).ExportedCommands.Keys |% {get-help $_}
+timeout /t 10

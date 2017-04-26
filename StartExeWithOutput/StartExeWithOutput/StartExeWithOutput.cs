@@ -20,17 +20,21 @@ namespace RuustyPowerShellModules
         private AsyncOperation _asyncOp;
         private AutoResetEvent _autoResetEvent;
 
+        private string[] argCollection;
 
         [Parameter(Position = 0, Mandatory = true, HelpMessage = "Executable to start")]
         public string FilePath { get; set; }
 
-        void OutputHandler(object sendingProcess, object outLine)
+        [Parameter(Position = 1, HelpMessage = "Arguments for executable")]
+        public string[] ArgumentList
         {
-            //* Do your stuff with the output (write to console/log/StringBuilder)
-            Console.WriteLine("outLine.Data");
-            //WriteObject(outLine.Data);
-            //this.WriteVerbose(outLine.Data);
+            get { return argCollection; }
+            set { argCollection = value; }
         }
+
+        [Parameter(Mandatory = false, HelpMessage = "Working Directory")]
+        public string cwd { get; set; } = "";
+
 
         protected override void BeginProcessing()
         {
@@ -41,7 +45,7 @@ namespace RuustyPowerShellModules
 
         protected override void ProcessRecord()
         {
-            var task = Task.Factory.StartNew(DoLongOperation);
+            var task = Task.Factory.StartNew(LaunchProcess);
             do
             {
                 Application.DoEvents();
@@ -61,29 +65,122 @@ namespace RuustyPowerShellModules
         protected override void EndProcessing()
         {
             Debug.WriteLine("EndProcessing ThreadId: " + Thread.CurrentThread.ManagedThreadId);
-
         }
 
         void DoLongOperation()
         {
-            _progressRecord = new ProgressRecord(0, string.Format("Applying Windows Image - {0}", "imageNameNode.TypedValue"), "Starting");
+            string args = string.Empty;
+            if (argCollection != null)
+            {
+                args = String.Join(" ", argCollection);
+            }
+            _progressRecord = new ProgressRecord(0, string.Format("Starting - {0}", FilePath), args);
+
             Debug.WriteLine("DoWork ThreadId: " + Thread.CurrentThread.ManagedThreadId);
-                for (int i = 0; i < 20; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     _asyncOp.Post(WriteProcessAsync, string.Format("message:{0}",i));
-                    //_backgroundWorker.ReportProgress(i * 5);
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                 }
+
+
+            _asyncOp.Post(WriteWarningAsync,"Just about to exit");
+
                 _autoResetEvent.Set();
+        }
+
+        void LaunchProcess()
+        {
+            string args = string.Empty;
+            if (argCollection != null)
+            {
+                args = String.Join(" ", argCollection);
+            }
+            _progressRecord = new ProgressRecord(0, string.Format("Starting - {0}", FilePath), args);
+            WriteProgress(_progressRecord);
+            Debug.WriteLine("DoWork ThreadId: " + Thread.CurrentThread.ManagedThreadId);
+            for (int i = 0; i < 10; i++)
+            {
+                _asyncOp.Post(WriteProcessAsync, string.Format("message:{0}", i));
+                Thread.Sleep(500);
+            }
+            ////* Create your Process
+            Process process = new Process();
+            process.StartInfo.FileName = FilePath;
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = false;// true;
+
+            //* Optional process configuration
+            if (!String.IsNullOrEmpty(args)) { process.StartInfo.Arguments = args; }
+            if (!String.IsNullOrEmpty(cwd)) { process.StartInfo.WorkingDirectory = cwd; }
+
+            process.OutputDataReceived += new DataReceivedEventHandler((sender, e) =>
+            {
+                //Console.WriteLine(e.Data);
+                //this.WriteVerbose(e.Data);
+                _asyncOp.Post(WriteProcessAsync, e.Data);
+
+            });
+
+
+            //* Start process and handlers
+            try
+            {
+                process.Start();
+                process.BeginOutputReadLine();
+                //process.BeginErrorReadLine();
+                process.WaitForExit();
+                WriteVerbose("After WaitForExit");
+
+            }
+            catch (Exception e)
+            {
+                WriteDebug("Exception");
+                ErrorRecord er = new ErrorRecord(e, "", ErrorCategory.InvalidOperation, FilePath);
+                base.ThrowTerminatingError(er);
+                //throw new System.Management.Automation.RuntimeException(string.Format("{0} ExitCode:{1}", FilePath, process.ExitCode), e);
+            }
+            finally
+            {
+                if (process.ExitCode != 0)
+                {
+                    //throw new System.Management.Automation.RuntimeException(string.Format("{0} ExitCode:{1}", FilePath, process.ExitCode));
+                    //ErrorRecord er = new ErrorRecord(e, "", ErrorCategory.InvalidOperation, FilePath);
+                    //base.ThrowTerminatingError(er);
+
+                }
+            }
+            _asyncOp.Post(WriteWarningAsync, "Just about to exit");
+            _autoResetEvent.Set();
         }
 
         private void WriteProcessAsync(object message)
         {
-            _progressRecord.StatusDescription = "((WimMessageProcess)message).Path";
-            WriteProgress(_progressRecord);
-            WriteVerbose("WriteProcessAsync");
-            WriteObject("Line of text");
+            //_progressRecord.StatusDescription = "((WimMessageProcess)message).Path";
+            //_progressRecord.StatusDescription = (string)message;
+            //WriteProgress(_progressRecord);
+            //WriteVerbose("WriteProcessAsync");
+            WriteObject((string)message);
         }
+  
+
+        private void WriteWarningAsync(object message)
+        {
+            WriteWarning((string)message);
+        }
+
+        /*
+        private void WriteErrorAsync(object message)
+        {
+            var errorMessage = (WimMessageError)message;
+            var errorRecord = new ErrorRecord(new Win32Exception(errorMessage.Win32ErrorCode), errorMessage.Path,
+                ErrorCategory.WriteError, null);
+
+            WriteError(errorRecord);
+        }
+*/
 
     }
 }
