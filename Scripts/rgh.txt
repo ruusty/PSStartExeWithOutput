@@ -1,0 +1,82 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170426000907
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\WINDOWS\system32\windowspowershell\v1.0\powershell.exe -NoExit -nologo
+Process ID: 9260
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+ [
+master
+ ↑1
+ +26
+ ~0
+ -0
+ !
+]
+>
+R:\Projects-Ruusty\PSStartExeWithOutput\ScriptsStart-ExeWithOutput -filepath "sqlplus.exe" -verbose
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+VERBOSE: WriteProcessAsync
+Line of text
+ [
+master
+ ↑1
+ +26
+ ~0
+ -0
+ !
+]
+>
+R:\Projects-Ruusty\PSStartExeWithOutput\ScriptsStop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20170426000940
+**********************
