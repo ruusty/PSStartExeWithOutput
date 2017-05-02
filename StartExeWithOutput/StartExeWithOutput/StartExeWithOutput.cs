@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -85,8 +86,7 @@ namespace RuustyPowerShellModules
 
 
             _asyncOp.Post(WriteWarningAsync,"Just about to exit");
-
-                _autoResetEvent.Set();
+           _autoResetEvent.Set();
         }
 
         void LaunchProcess()
@@ -97,9 +97,9 @@ namespace RuustyPowerShellModules
                 args = String.Join(" ", argCollection);
             }
             _progressRecord = new ProgressRecord(0, string.Format("Starting - {0}", FilePath), args);
-            WriteProgress(_progressRecord);
-            Debug.WriteLine("DoWork ThreadId: " + Thread.CurrentThread.ManagedThreadId);
-            for (int i = 0; i < 10; i++)
+            //WriteProgress(_progressRecord);
+            //Debug.WriteLine("DoWork ThreadId: " + Thread.CurrentThread.ManagedThreadId);
+            for (int i = 0; i < 5; i++)
             {
                 _asyncOp.Post(WriteProcessAsync, string.Format("message:{0}", i));
                 Thread.Sleep(500);
@@ -124,7 +124,7 @@ namespace RuustyPowerShellModules
 
             });
 
-
+            //throw new InvalidDataException("Unable to read WIM image name");
             //* Start process and handlers
             try
             {
@@ -132,21 +132,23 @@ namespace RuustyPowerShellModules
                 process.BeginOutputReadLine();
                 //process.BeginErrorReadLine();
                 process.WaitForExit();
-                WriteVerbose("After WaitForExit");
+                _asyncOp.Post(WriteProcessAsync,"After WaitForExit");
+                throw new System.Management.Automation.RuntimeException(string.Format("{0} ExitCode:{1}", FilePath, process.ExitCode));
 
             }
             catch (Exception e)
             {
-                WriteDebug("Exception");
+                _asyncOp.Post(WriteWarningAsync,e.StackTrace);
                 ErrorRecord er = new ErrorRecord(e, "", ErrorCategory.InvalidOperation, FilePath);
-                base.ThrowTerminatingError(er);
+                //base.ThrowTerminatingError(er);
                 //throw new System.Management.Automation.RuntimeException(string.Format("{0} ExitCode:{1}", FilePath, process.ExitCode), e);
+                //throw new InvalidDataException("Unable to read WIM image name");
             }
             finally
             {
                 if (process.ExitCode != 0)
                 {
-                    //throw new System.Management.Automation.RuntimeException(string.Format("{0} ExitCode:{1}", FilePath, process.ExitCode));
+                    throw new System.Management.Automation.RuntimeException(string.Format("{0} ExitCode:{1}", FilePath, process.ExitCode));
                     //ErrorRecord er = new ErrorRecord(e, "", ErrorCategory.InvalidOperation, FilePath);
                     //base.ThrowTerminatingError(er);
 

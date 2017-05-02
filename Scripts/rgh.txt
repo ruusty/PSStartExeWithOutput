@@ -939,3 +939,645 @@ WARNING: Just about to exit
 Windows PowerShell transcript end
 End time: 20170426234449
 **********************
+**********************
+Windows PowerShell transcript start
+Start time: 20170427234209
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 12176
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+**********************
+Windows PowerShell transcript start
+Start time: 20170427234427
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 9244
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+**********************
+Windows PowerShell transcript start
+Start time: 20170427234638
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 7772
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+**********************
+Windows PowerShell transcript start
+Start time: 20170427234748
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 17460
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+**********************
+Windows PowerShell transcript start
+Start time: 20170427235000
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 15408
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+Start-ExeWithOutput : The term 'Start-ExeWithOutput' is not recognized as the name of a cmdlet, function, script file, 
+or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1:6 char:1
++ Start-ExeWithOutput -filepath "sqlplus.exe" -ArgumentList @("arg01"," ...
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Start-ExeWithOutput:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Start-ExeWithOutput : The term 'Start-ExeWithOutput' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling
+of the name, or if a path was included, verify that the path is correct and try again.
+At R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1:6 char:1
++ Start-ExeWithOutput -filepath "sqlplus.exe" -ArgumentList @("arg01"," ...
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Start-ExeWithOutput:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+**********************
+Windows PowerShell transcript end
+End time: 20170427235000
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20170427235052
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 6540
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+**********************
+Windows PowerShell transcript start
+Start time: 20170427235259
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 2920
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+**********************
+Windows PowerShell transcript start
+Start time: 20170427235443
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 1764
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+message:0
+message:1
+message:2
+message:3
+message:4
+message:5
+message:6
+message:7
+message:8
+message:9
+>> TerminatingError(Start-ExeWithOutput): "One or more errors occurred."
+Start-ExeWithOutput : One or more errors occurred.
+At R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1:6 char:1
++ Start-ExeWithOutput -filepath "sqlplus.exe" -ArgumentList @("arg01"," ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Start-ExeWithOutput], AggregateException
+    + FullyQualifiedErrorId : System.AggregateException,RuustyPowerShellModules.StartExeWithOutput
+Start-ExeWithOutput : One or more errors occurred.
+At R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1:6 char:1
++ Start-ExeWithOutput -filepath "sqlplus.exe" -ArgumentList @("arg01"," ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Start-ExeWithOutput], AggregateException
+    + FullyQualifiedErrorId : System.AggregateException,RuustyPowerShellModules.StartExeWithOutput
+
+**********************
+Windows PowerShell transcript end
+End time: 20170427235448
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20170427235514
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 7768
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+message:0
+message:1
+message:2
+message:3
+message:4
+message:5
+message:6
+message:7
+message:8
+message:9
+>> TerminatingError(Start-ExeWithOutput): "One or more errors occurred."
+Start-ExeWithOutput : One or more errors occurred.
+At R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1:6 char:1
++ Start-ExeWithOutput -filepath "sqlplus.exe" -ArgumentList @("arg01"," ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Start-ExeWithOutput], AggregateException
+    + FullyQualifiedErrorId : System.AggregateException,RuustyPowerShellModules.StartExeWithOutput
+Start-ExeWithOutput : One or more errors occurred.
+At R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1:6 char:1
++ Start-ExeWithOutput -filepath "sqlplus.exe" -ArgumentList @("arg01"," ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Start-ExeWithOutput], AggregateException
+    + FullyQualifiedErrorId : System.AggregateException,RuustyPowerShellModules.StartExeWithOutput
+
+**********************
+Windows PowerShell transcript end
+End time: 20170427235519
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20170427235646
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 3776
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+message:0
+message:1
+message:2
+message:3
+message:4
+message:5
+message:6
+message:7
+message:8
+message:9
+**********************
+Windows PowerShell transcript end
+End time: 20170427235653
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20170427235743
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 14212
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+message:0
+message:1
+message:2
+message:3
+message:4
+**********************
+Windows PowerShell transcript end
+End time: 20170427235746
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20170427235807
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 11204
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+message:0
+message:1
+message:2
+message:3
+message:4
+isRedirectedStdin False
+=C:=C:\Program Files\GPSoftware\Directory Opus
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\Russell\AppData\Roaming
+AWE_DIR=C:\Program Files (x86)\Khrona LLC\Awesomium SDK\1.6.6\
+ChocolateyInstall=C:\ProgramData\chocolatey
+ChocolateyLastPathUpdate=Mon Jan  9 22:16:54 2017
+ChocolateyToolsLocation=C:\tools
+CommonProgramFiles=C:\Program Files (x86)\Common Files
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+CommonProgramW6432=C:\Program Files\Common Files
+COMPUTERNAME=FLORES
+ComSpec=C:\WINDOWS\system32\cmd.exe
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOME=D:\Users\Russell
+HOMEDRIVE=D:
+HOMEPATH=\Users\Russell
+LOCALAPPDATA=C:\Users\Russell\AppData\Local
+LOGONSERVER=\\FLORES
+MOZ_PLUGIN_PATH=C:\Program Files (x86)\Nuance\Power PDF\Bin
+NUMBER_OF_PROCESSORS=8
+OneDrive=D:\Users\Russell\OneDrive
+OS=Windows_NT
+Path=C:\ProgramData\Oracle\Java\javapath;C:\Program Files\SlickEdit Pro 21.0.2\win\;C:\Program Files\RSA SecurID Token Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\ProgramData\chocolatey\bin;%USERPROFILE%\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Markdown Monster;C:\Program Files (x86)\get_iplayer;C:\Program Files\TortoiseGit\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.1\bin;C:\Program Files (x86)\nant-0.93-dev-2016-07-31-bin\bin;C:\Users\Russell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin;C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.3\bin;C:\Program Files (x86)\Markdown Monster;C:\Program Files\7-Zip;C:\_data\dev\bin
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+PROCESSOR_ARCHITECTURE=x86
+PROCESSOR_ARCHITEW6432=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=5e03
+ProgramData=C:\ProgramData
+ProgramFiles=C:\Program Files (x86)
+ProgramFiles(x86)=C:\Program Files (x86)
+ProgramW6432=C:\Program Files
+PSExecutionPolicyPreference=Bypass
+PSModulePath=C:\_data\dev\posh\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files\Ruusty\Modules;D:\Users\Russell\.PowershellModules;C:\Program Files\Ched Services\posh\Modules
+PUBLIC=C:\Users\Public
+SESSIONNAME=Console
+SystemDrive=C:
+SystemRoot=C:\WINDOWS
+TEMP=C:\Users\Russell\AppData\Local\Temp
+TMP=C:\Users\Russell\AppData\Local\Temp
+USERDOMAIN=FLORES
+USERDOMAIN_ROAMINGPROFILE=FLORES
+USERNAME=Russell
+USERPROFILE=C:\Users\Russell
+VS140COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+windir=C:\WINDOWS
+0: R:\Projects-Ruusty\echo-args\Release\echo-args.exe
+1: arg01
+2: arg02
+After WaitForExit
+WARNING: Just about to exit
+**********************
+Windows PowerShell transcript end
+End time: 20170427235810
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20170427235942
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 15988
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+**********************
+Windows PowerShell transcript start
+Start time: 20170428000338
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 2764
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+message:0
+message:1
+message:2
+message:3
+message:4
+isRedirectedStdin False
+=C:=C:\Program Files\GPSoftware\Directory Opus
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\Russell\AppData\Roaming
+AWE_DIR=C:\Program Files (x86)\Khrona LLC\Awesomium SDK\1.6.6\
+ChocolateyInstall=C:\ProgramData\chocolatey
+ChocolateyLastPathUpdate=Mon Jan  9 22:16:54 2017
+ChocolateyToolsLocation=C:\tools
+CommonProgramFiles=C:\Program Files (x86)\Common Files
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+CommonProgramW6432=C:\Program Files\Common Files
+COMPUTERNAME=FLORES
+ComSpec=C:\WINDOWS\system32\cmd.exe
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOME=D:\Users\Russell
+HOMEDRIVE=D:
+HOMEPATH=\Users\Russell
+LOCALAPPDATA=C:\Users\Russell\AppData\Local
+LOGONSERVER=\\FLORES
+MOZ_PLUGIN_PATH=C:\Program Files (x86)\Nuance\Power PDF\Bin
+NUMBER_OF_PROCESSORS=8
+OneDrive=D:\Users\Russell\OneDrive
+OS=Windows_NT
+Path=C:\ProgramData\Oracle\Java\javapath;C:\Program Files\SlickEdit Pro 21.0.2\win\;C:\Program Files\RSA SecurID Token Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\ProgramData\chocolatey\bin;%USERPROFILE%\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Markdown Monster;C:\Program Files (x86)\get_iplayer;C:\Program Files\TortoiseGit\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.1\bin;C:\Program Files (x86)\nant-0.93-dev-2016-07-31-bin\bin;C:\Users\Russell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin;C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.3\bin;C:\Program Files (x86)\Markdown Monster;C:\Program Files\7-Zip;C:\_data\dev\bin
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+PROCESSOR_ARCHITECTURE=x86
+PROCESSOR_ARCHITEW6432=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=5e03
+ProgramData=C:\ProgramData
+ProgramFiles=C:\Program Files (x86)
+ProgramFiles(x86)=C:\Program Files (x86)
+ProgramW6432=C:\Program Files
+PSExecutionPolicyPreference=Bypass
+PSModulePath=C:\_data\dev\posh\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files\Ruusty\Modules;D:\Users\Russell\.PowershellModules;C:\Program Files\Ched Services\posh\Modules
+PUBLIC=C:\Users\Public
+SESSIONNAME=Console
+SystemDrive=C:
+SystemRoot=C:\WINDOWS
+TEMP=C:\Users\Russell\AppData\Local\Temp
+TMP=C:\Users\Russell\AppData\Local\Temp
+USERDOMAIN=FLORES
+USERDOMAIN_ROAMINGPROFILE=FLORES
+USERNAME=Russell
+USERPROFILE=C:\Users\Russell
+VS140COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+windir=C:\WINDOWS
+0: R:\Projects-Ruusty\echo-args\Release\echo-args.exe
+1: arg01
+2: arg02
+After WaitForExit
+WARNING:    at RuustyPowerShellModules.StartExeWithOutput.LaunchProcess() in R:\Projects-Ruusty\PSStartExeWithOutput\StartExeWithOutput\StartExeWithOutput\StartExeWithOutput.cs:line 137
+WARNING: Just about to exit
+**********************
+Windows PowerShell transcript end
+End time: 20170428000340
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20170428000422
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 18016
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+message:0
+message:1
+message:2
+message:3
+message:4
+isRedirectedStdin False
+=C:=C:\Program Files\GPSoftware\Directory Opus
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\Russell\AppData\Roaming
+AWE_DIR=C:\Program Files (x86)\Khrona LLC\Awesomium SDK\1.6.6\
+ChocolateyInstall=C:\ProgramData\chocolatey
+ChocolateyLastPathUpdate=Mon Jan  9 22:16:54 2017
+ChocolateyToolsLocation=C:\tools
+CommonProgramFiles=C:\Program Files (x86)\Common Files
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+CommonProgramW6432=C:\Program Files\Common Files
+COMPUTERNAME=FLORES
+ComSpec=C:\WINDOWS\system32\cmd.exe
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOME=D:\Users\Russell
+HOMEDRIVE=D:
+HOMEPATH=\Users\Russell
+LOCALAPPDATA=C:\Users\Russell\AppData\Local
+LOGONSERVER=\\FLORES
+MOZ_PLUGIN_PATH=C:\Program Files (x86)\Nuance\Power PDF\Bin
+NUMBER_OF_PROCESSORS=8
+OneDrive=D:\Users\Russell\OneDrive
+OS=Windows_NT
+Path=C:\ProgramData\Oracle\Java\javapath;C:\Program Files\SlickEdit Pro 21.0.2\win\;C:\Program Files\RSA SecurID Token Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\ProgramData\chocolatey\bin;%USERPROFILE%\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Markdown Monster;C:\Program Files (x86)\get_iplayer;C:\Program Files\TortoiseGit\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.1\bin;C:\Program Files (x86)\nant-0.93-dev-2016-07-31-bin\bin;C:\Users\Russell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin;C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.3\bin;C:\Program Files (x86)\Markdown Monster;C:\Program Files\7-Zip;C:\_data\dev\bin
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+PROCESSOR_ARCHITECTURE=x86
+PROCESSOR_ARCHITEW6432=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=5e03
+ProgramData=C:\ProgramData
+ProgramFiles=C:\Program Files (x86)
+ProgramFiles(x86)=C:\Program Files (x86)
+ProgramW6432=C:\Program Files
+PSExecutionPolicyPreference=Bypass
+PSModulePath=C:\_data\dev\posh\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files\Ruusty\Modules;D:\Users\Russell\.PowershellModules;C:\Program Files\Ched Services\posh\Modules
+PUBLIC=C:\Users\Public
+SESSIONNAME=Console
+SystemDrive=C:
+SystemRoot=C:\WINDOWS
+TEMP=C:\Users\Russell\AppData\Local\Temp
+TMP=C:\Users\Russell\AppData\Local\Temp
+USERDOMAIN=FLORES
+USERDOMAIN_ROAMINGPROFILE=FLORES
+USERNAME=Russell
+USERPROFILE=C:\Users\Russell
+VS140COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+windir=C:\WINDOWS
+0: R:\Projects-Ruusty\echo-args\Release\echo-args.exe
+1: arg01
+2: arg02
+After WaitForExit
+WARNING:    at RuustyPowerShellModules.StartExeWithOutput.LaunchProcess() in R:\Projects-Ruusty\PSStartExeWithOutput\StartExeWithOutput\StartExeWithOutput\StartExeWithOutput.cs:line 137
+WARNING: Just about to exit
+**********************
+Windows PowerShell transcript end
+End time: 20170428000425
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20170502234001
+Username: FLORES\Russell
+RunAs User: FLORES\Russell
+Machine: FLORES (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'R:\Projects-Ruusty\PSStartExeWithOutput\Scripts\run-StartExe.ps1'
+Process ID: 12432
+PSVersion: 5.1.14393.1066
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1066
+BuildVersion: 10.0.14393.1066
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is rgh.txt
+message:0
+message:1
+message:2
+message:3
+message:4
+isRedirectedStdin False
+=C:=C:\Program Files\GPSoftware\Directory Opus
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\Russell\AppData\Roaming
+AWE_DIR=C:\Program Files (x86)\Khrona LLC\Awesomium SDK\1.6.6\
+ChocolateyInstall=C:\ProgramData\chocolatey
+ChocolateyLastPathUpdate=Mon Jan  9 22:16:54 2017
+ChocolateyToolsLocation=C:\tools
+CommonProgramFiles=C:\Program Files (x86)\Common Files
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+CommonProgramW6432=C:\Program Files\Common Files
+COMPUTERNAME=FLORES
+ComSpec=C:\WINDOWS\system32\cmd.exe
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+HOME=D:\Users\Russell
+HOMEDRIVE=D:
+HOMEPATH=\Users\Russell
+LOCALAPPDATA=C:\Users\Russell\AppData\Local
+LOGONSERVER=\\FLORES
+MOZ_PLUGIN_PATH=C:\Program Files (x86)\Nuance\Power PDF\Bin
+NUMBER_OF_PROCESSORS=8
+OneDrive=D:\Users\Russell\OneDrive
+OS=Windows_NT
+Path=C:\ProgramData\Oracle\Java\javapath;C:\Program Files\SlickEdit Pro 21.0.2\win\;C:\Program Files\RSA SecurID Token Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\ProgramData\chocolatey\bin;%USERPROFILE%\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Markdown Monster;C:\Program Files (x86)\get_iplayer;C:\Program Files\TortoiseGit\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.1\bin;C:\Program Files (x86)\nant-0.93-dev-2016-07-31-bin\bin;C:\Users\Russell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin;C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.3\bin;C:\Program Files (x86)\Markdown Monster;C:\Program Files\7-Zip;C:\_data\dev\bin
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+PROCESSOR_ARCHITECTURE=x86
+PROCESSOR_ARCHITEW6432=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=5e03
+ProgramData=C:\ProgramData
+ProgramFiles=C:\Program Files (x86)
+ProgramFiles(x86)=C:\Program Files (x86)
+ProgramW6432=C:\Program Files
+PSExecutionPolicyPreference=Bypass
+PSModulePath=C:\_data\dev\posh\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files\Ruusty\Modules;D:\Users\Russell\.PowershellModules;C:\Program Files\Ched Services\posh\Modules
+PUBLIC=C:\Users\Public
+SESSIONNAME=Console
+SystemDrive=C:
+SystemRoot=C:\WINDOWS
+TEMP=C:\Users\Russell\AppData\Local\Temp
+TMP=C:\Users\Russell\AppData\Local\Temp
+USERDOMAIN=FLORES
+USERDOMAIN_ROAMINGPROFILE=FLORES
+USERNAME=Russell
+USERPROFILE=C:\Users\Russell
+VS140COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+windir=C:\WINDOWS
+0: R:\Projects-Ruusty\echo-args\Release\echo-args.exe
+1: arg01
+2: arg02
+After WaitForExit
+WARNING:    at RuustyPowerShellModules.StartExeWithOutput.LaunchProcess() in R:\Projects-Ruusty\PSStartExeWithOutput\StartExeWithOutput\StartExeWithOutput\StartExeWithOutput.cs:line 137
+WARNING: Just about to exit
+**********************
+Windows PowerShell transcript end
+End time: 20170502234004
+**********************
