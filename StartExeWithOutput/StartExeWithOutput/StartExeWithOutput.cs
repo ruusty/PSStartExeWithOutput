@@ -99,11 +99,12 @@ namespace RuustyPowerShellModules
             _progressRecord = new ProgressRecord(0, string.Format("Starting - {0}", FilePath), args);
             //WriteProgress(_progressRecord);
             //Debug.WriteLine("DoWork ThreadId: " + Thread.CurrentThread.ManagedThreadId);
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
                 _asyncOp.Post(WriteProcessAsync, string.Format("message:{0}", i));
                 Thread.Sleep(500);
             }
+            _asyncOp.Post(WriteErrorAsync, "My Error Message2");
             ////* Create your Process
             Process process = new Process();
             process.StartInfo.FileName = FilePath;
@@ -129,13 +130,15 @@ namespace RuustyPowerShellModules
             try
             {
                 process.Start();
-                process.BeginOutputReadLine();
+               // process.BeginOutputReadLine();
                 //process.BeginErrorReadLine();
                 process.WaitForExit();
                 _asyncOp.Post(WriteProcessAsync,"After WaitForExit");
-                throw new System.Management.Automation.RuntimeException(string.Format("{0} ExitCode:{1}", FilePath, process.ExitCode));
+                _asyncOp.Post(WriteErrorAsync,"My Error Message");
 
-            }
+                //throw new System.Management.Automation.RuntimeException(string.Format("{0} ExitCode:{1}", FilePath, process.ExitCode));
+
+    }
             catch (Exception e)
             {
                 _asyncOp.Post(WriteWarningAsync,e.StackTrace);
@@ -173,16 +176,14 @@ namespace RuustyPowerShellModules
             WriteWarning((string)message);
         }
 
-        /*
+
         private void WriteErrorAsync(object message)
         {
-            var errorMessage = (WimMessageError)message;
-            var errorRecord = new ErrorRecord(new Win32Exception(errorMessage.Win32ErrorCode), errorMessage.Path,
-                ErrorCategory.WriteError, null);
-
+            var errorMessage = "Testing exceptions";
+            var errorRecord = new ErrorRecord(new Exception(), errorMessage,    ErrorCategory.WriteError, null);
             WriteError(errorRecord);
         }
-*/
+
 
     }
 }
