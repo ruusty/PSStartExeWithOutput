@@ -1,4 +1,13 @@
 packages
 .vs
-/StartExeWithOutput/StartExeWithOutput/obj
-/StartExeWithOutput/StartExeWithOutput/bin
+/StartExeWithOutput/obj
+/StartExeWithOutput/bin
+/*.Build.Number
+/*.git_history.txt
+/Build
+/Dist
+*.log
+*.zip
+*.TempPoint.ps1
+/Work
+/*.nupkg

@@ -1,9 +1,9 @@
-# RuustyPowerShellModules - StartExeWithOutput#
+# RuustyPowerShellModules - StartExeWithOutput #
 
 ~~~
 Project:        Ruusty Powershell Tools
 Product:        RuustyPowerShellModules
-Version:        4.3
+Version:        1.0.0.0
 Date:           2018-05-20 
 Description:    Powershell binary cmdlet to run an executable.
 ~~~

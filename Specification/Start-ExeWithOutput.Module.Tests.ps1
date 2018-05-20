@@ -31,7 +31,7 @@ Write-Verbose $('{0}:{1}' -f '$here', $here)
 Write-Verbose $('{0}:{1}' -f '$sut', $sut)
 Write-Verbose $('{0}:{1}' -f '$ModuleName', $ModuleName)
 
-$ModulePath = Join-Path $here "..\StartExeWithOutput\StartExeWithOutput\bin\Release\StartExeWithOutput.dll"
+$ModulePath = Join-Path $here "..\StartExeWithOutput\bin\Release\StartExeWithOutput.dll"
 
 
 $ModuleSetup= Join-Path $PSScriptRoot "Pester.Tests.Setup.ps1"

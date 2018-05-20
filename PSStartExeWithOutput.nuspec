@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>psstartexewithoutput</id>
+    <version>0.0.0</version>
+    <title>PSStartExeWithOutput</title>
+    <authors>Ruusty</authors>
+    <owners>Ruusty</owners>
+    <projectUrl>http://example.com</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>PowerShell module to </summary>
+
+    <description>Powershell Module Cmdlets to run executables with logging.
+    </description>
+    <copyright>Copyright (c) 2018, All rights reserved.</copyright>
+    <tags> powershell build</tags>
+  </metadata>
+  <files>
+    <file target="tools" src="tools\ChocolateyInstall.ps1" />
+    <file target="tools" src="tools\ChocolateyUninstall.ps1" />
+    <file target="tools" src="tools\properties.ps1" />
+    <file target="tools" src="tools\PSStartExeWithOutput.zip" />
+  </files>
+</package>

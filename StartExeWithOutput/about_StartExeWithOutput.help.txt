@@ -1,0 +1,32 @@
+TOPIC
+    about_StartExeWithOutput
+    
+SHORT DESCRIPTION
+    Cmdlets to run executables.
+           
+LONG DESCRIPTION
+    Cmdlets to run executables..
+                 
+    The following cmdlets are included.
+
+    Start-ExeWithOutput  Runs an executable with logging to Verbose stream, console, log file.
+
+    Get all the cmdlets in  StartExeWithOutput
+    get-module "StartExeWithOutput" | select -expand ExportedCommands
+
+    Get the help
+    $(get-module StartExeWithOutput).ExportedCommands.Keys |% {get-help $_}
+
+
+    $mod = Get-Module -FullyQualifiedName @{ ModuleName = "Ruusty.ReleaseUtilities"; MaximumVersion = "2.0.0.0" }
+
+
+
+    SEE ALSO
+    Online help and updates: 
+            http://example.com
+    GitHub repository      : 
+            https://github.com/
+
+    BitBucket repository      : 
+            https://github.com/
