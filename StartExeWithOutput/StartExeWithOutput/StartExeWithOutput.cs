@@ -25,9 +25,9 @@ namespace RuustyPowerShellModules
     /// <code>Start-ExeWithOutput -FilePath "ping.exe" -ArgumentList @("127.0.0.1", "-n", "5") -verbose </code>
     ///  <para>Ping localhost 5 times and display output on Write-Verbose</para>
     /// <example>
-    /// 
+    ///
     /// </example>
-    [Cmdlet(VerbsLifecycle.Start, "ExeWithOutput")]
+    [Cmdlet(VerbsLifecycle.Start, "ExeWithOutput", SupportsShouldProcess = true)]
     public class StartExeWithOutput : Cmdlet
     {
         private AsyncOperation _asyncOp;
@@ -35,7 +35,7 @@ namespace RuustyPowerShellModules
 
         Nullable<int> _processId = null;
         private Task<int> task = null;
-        
+
         private string[] argCollection;
         string args = string.Empty;
         private int[] exitCodeCollection =  {0};
@@ -77,7 +77,8 @@ namespace RuustyPowerShellModules
 
         protected override void BeginProcessing()
         {
-            base.BeginProcessing(); SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
+            base.BeginProcessing();
+            SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
             _asyncOp = AsyncOperationManager.CreateOperation(null);
             _autoResetEvent = new AutoResetEvent(false);
 
@@ -91,44 +92,48 @@ namespace RuustyPowerShellModules
 #pragma warning disable 1591
         protected override void ProcessRecord()
         {//process each item in the pipeline
-            _asyncOp.Post(WriteProgressAsync, args);
-            try
+            string target = string.Format("'{0}' {1} at ", FilePath, args, WorkingDirectory);
+            if (ShouldProcess(target, "Start"))
             {
-                task = Task<int>.Factory.StartNew(() =>
+                _asyncOp.Post(WriteProgressAsync, args);
+                try
                 {
-                    return Start(FilePath, args, WorkingDirectory, LogPathStdout, LogPathStderr);
-                });
-                do
-                {
-                    Debug.WriteLine("ProcessRecord-Message Pump Loop");
+                    task = Task<int>.Factory.StartNew(() =>
+                    {
+                        return Start(FilePath, args, WorkingDirectory, LogPathStdout, LogPathStderr);
+                    });
+                    do
+                    {
+                        Debug.WriteLine("ProcessRecord-Message Pump Loop");
+                        Application.DoEvents();
+                    }
+                    while (!_autoResetEvent.WaitOne(250));
                     Application.DoEvents();
-                }
-                while (!_autoResetEvent.WaitOne(250));
-                Application.DoEvents();
-                task.Wait();
+                    task.Wait();
 
-                Trace.WriteLine(string.Format("Task.Result='{0}'", task.Result));
-                if (!exitCodeList.Contains( task.Result))
+                    Trace.WriteLine(string.Format("Task.Result='{0}'", task.Result));
+                    if (!exitCodeList.Contains(task.Result))
+                    {
+                        string ExitCodeCsv = string.Empty;
+                        ExitCodeCsv = string.Join(",", exitCodeList.Select(p => p));
+                        var e = new System.Management.Automation.RuntimeException(String.Format("{0} ExitCode '{1}' not in valid exit codes ({2})", FilePath, task.Result, ExitCodeCsv));
+                        var errorRecord = new ErrorRecord(e, string.Format("Unexpected ExitCode of {0} for {1}", task.Result, FilePath), ErrorCategory.InvalidResult, null);
+                        WriteError(errorRecord);
+                    }
+                }
+                catch (AggregateException ae)
                 {
-                    string ExitCodeCsv = string.Empty;
-                    ExitCodeCsv = string.Join(",", exitCodeList.Select(p => p));
-                    var e = new System.Management.Automation.RuntimeException(String.Format("{0} ExitCode '{1}' not in valid exit codes ({2})", FilePath, task.Result, ExitCodeCsv));
-                    var errorRecord = new ErrorRecord(e, string.Format("Unexpected ExitCode of {0} for {1}", task.Result, FilePath), ErrorCategory.InvalidResult, null);
+                    var errorRecord = new ErrorRecord(ae.InnerException, "Unexpected ExitCode for " + ae.InnerException.Message, ErrorCategory.InvalidResult, null);
+                    Console.WriteLine("Task has {0}" , task.Status);
+                    Console.WriteLine(ae.InnerException);
                     WriteError(errorRecord);
                 }
+                finally
+                {
+                    task.Dispose();
+                }
+                WriteObject(task.Result);
             }
-            catch (AggregateException ae)
-            {
-                var errorRecord = new ErrorRecord(ae.InnerException, "Unexpected ExitCode for " + ae.InnerException.Message, ErrorCategory.InvalidResult, null);
-                WriteError(errorRecord);
-                Console.WriteLine("Task has " + task.Status.ToString());
-                Console.WriteLine(ae.InnerException);
-            }
-            finally
-            {
-                task.Dispose();
-            }
-            WriteObject(task.Result);
         }
 
         protected override void StopProcessing()
@@ -143,19 +148,19 @@ namespace RuustyPowerShellModules
             Debug.WriteLine("EndProcessing ThreadId: " + Thread.CurrentThread.ManagedThreadId);
         }
 
-        /// 
+        ///
         ///  _asyncOp.Post(WriteProcessAsync,string)
-        /// 
-        /// 
+        ///
+        ///
         private void WriteProgressAsync(object message)
         {
             string msg = (string)message;
             ProgressRecord _progressRecord;
-            _progressRecord = new ProgressRecord(0, FilePath, msg);
             if (String.IsNullOrEmpty(msg))
             {
                 msg = " ";
             }
+            _progressRecord = new ProgressRecord(0, FilePath, msg);
             WriteProgress(_progressRecord);
         }
 
@@ -235,7 +240,7 @@ namespace RuustyPowerShellModules
             if (!String.IsNullOrEmpty(e.Data))
             {
             _asyncOp.Post(WriteVerboseAsync, (string)e.Data);
-            Console.WriteLine("STDERR>" + e.Data + "STDERR");
+            Console.WriteLine(e.Data);
             }
         };
 
@@ -264,9 +269,8 @@ namespace RuustyPowerShellModules
         catch (Exception ex)
         {
             System.Diagnostics.Debug.WriteLine(ex.Message);
-            var e = new System.Management.Automation.RuntimeException(String.Format("{0} ExitCode:{1}", FilePath, -1), ex);
+            _asyncOp.Post(WriteErrorAsync, ex.Message);
             _autoResetEvent.Set();
-            throw (e);
         }
         return process.ExitCode;
     }
