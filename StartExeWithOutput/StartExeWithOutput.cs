@@ -14,7 +14,7 @@ using System.Collections;
 namespace RuustyPowerShellModules
 {
     /// <summary>
-    /// <paratype="synopsis >Runs an executable</paratype>
+    /// <para type="synopsis">Runs an executable</para>
     /// <para type="description">Runs an executable and displays the stdout and stderr to Write-Verbose</para>
     /// <para type="description">Can also write stdout and stderr to log files</para>
     /// </summary>
@@ -24,9 +24,7 @@ namespace RuustyPowerShellModules
     /// </example>
     /// <code>Start-ExeWithOutput -FilePath "ping.exe" -ArgumentList @("127.0.0.1", "-n", "5") -verbose </code>
     ///  <para>Ping localhost 5 times and display output on Write-Verbose</para>
-    /// <example>
-    ///
-    /// </example>
+
     [Cmdlet(VerbsLifecycle.Start, "ExeWithOutput", SupportsShouldProcess = true)]
     public class StartExeWithOutput : Cmdlet
     {
@@ -41,9 +39,15 @@ namespace RuustyPowerShellModules
         private int[] exitCodeCollection =  {0};
         private List<int> exitCodeList;
 
-       [Parameter(Position = 0, Mandatory = true, HelpMessage = "Executable to start")]
+        /// <summary>
+        /// <para type="description">Specifies the optional path and file name of the program that runs in the process. Enter the name of an executable file</para>
+        /// </summary>
+        [Parameter(Position = 0, Mandatory = true, HelpMessage = "Executable to start")]
         public string FilePath { get; set; }
 
+        /// <summary>
+        /// <para type="description">Specifies parameters or parameter values to use when this cmdlet starts the process.If parameters or parameter values contain a space, they need surrounded with escaped double quotes</para>
+        /// </summary>
         [Parameter(Position = 1, HelpMessage = "Arguments for FilePath executable")]
         public string[] ArgumentList
         {
@@ -51,6 +55,9 @@ namespace RuustyPowerShellModules
             set { argCollection = value; }
         }
 
+        /// <summary>
+        /// <para type="description">Specifies the location of the executable file or document that runs in the process.The default is the folder for the new process.</para>
+        /// </summary>
         [Parameter(Mandatory = false, HelpMessage = "Working Directory")]
         public string WorkingDirectory { get; set; } = Directory.GetCurrentDirectory();
 
@@ -68,6 +75,10 @@ namespace RuustyPowerShellModules
         [Parameter(Mandatory = false,
             HelpMessage = "Enter Stderr log path")]
         public string LogPathStderr { get; set; }
+
+        /// <summary>
+        /// <para type="description">Specifies the valid return codes of the executable</para>
+        /// </summary>
         [Parameter (Mandatory = false,HelpMessage ="Valid Exit codes")]
         public int[] ExitCodeList
         {
@@ -75,6 +86,7 @@ namespace RuustyPowerShellModules
             set { exitCodeCollection = value; }
         }
 
+#pragma warning disable 1591
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
@@ -95,7 +107,7 @@ namespace RuustyPowerShellModules
             string target = string.Format("'{0}' {1} at ", FilePath, args, WorkingDirectory);
             if (ShouldProcess(target, "Start"))
             {
-                _asyncOp.Post(WriteProgressAsync, args);
+               // _asyncOp.Post(WriteProgressAsync, args);
                 try
                 {
                     task = Task<int>.Factory.StartNew(() =>
@@ -136,6 +148,7 @@ namespace RuustyPowerShellModules
             }
         }
 
+#pragma warning disable 1591
         protected override void StopProcessing()
         {//to handle abnormal termination
             WriteDebug(string.Format("StopProcessing ThreadId: {0} - {1}", Thread.CurrentThread.ManagedThreadId, Thread.CurrentThread.Name));
@@ -143,6 +156,7 @@ namespace RuustyPowerShellModules
             _autoResetEvent.Set();
         }
 
+#pragma warning disable 1591
         protected override void EndProcessing()
         {//do the finalization
             Debug.WriteLine("EndProcessing ThreadId: " + Thread.CurrentThread.ManagedThreadId);
@@ -215,7 +229,7 @@ namespace RuustyPowerShellModules
         bool isStdoutLogFileRedirect = (!String.IsNullOrEmpty(StdoutLogPath));
         bool isStderrLogFileRedirect = (!String.IsNullOrEmpty(StderrLogPath));
         //* Set output and error (asynchronous) handlers
-            process.OutputDataReceived += (s, e) =>
+        process.OutputDataReceived += (s, e) =>
         {
             if (isStdoutLogFileRedirect)
             {
