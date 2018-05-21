@@ -270,7 +270,7 @@ task DistributeTo-Delivery -description "Copy Deliverables to the Public Deliver
   $DeliveryCopyArgs = @{
     path    = @("$ProjDistPath/*.zip", "$ProjDistPath/README.*", "$ProjDistPath/*.nupkg", "$ProjDistPath/tools/*.zip", $ProjHistoryPath)
     destination = $ExecutionContext.InvokeCommand.ExpandString($ProjDeliveryPath)
-    Verbose = $VerbosePreference
+    Verbose = $true
   }
   Write-Host $("Attempting to copy deliverables to {0}" -f $DeliveryCopyArgs.Destination)
   if (!(Test-Path $DeliveryCopyArgs.Destination)) { mkdir -Path $DeliveryCopyArgs.Destination }
