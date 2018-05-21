@@ -268,7 +268,7 @@ task Distribute -description "Distribute the deliverables to Deliver" -PreCondit
 task DistributeTo-Delivery -description "Copy Deliverables to the Public Delivery Share" {
   $versionNum = Get-Content $ProjVersionPath
   $DeliveryCopyArgs = @{
-    path    = @("$ProjDistPath/*.zip", "$ProjDistPath/README.*", "$ProjDistPath/*.nupkg", "$ProjDistPath/tools/*.zip", $ProjHistoryPath)
+    path    = @( "$ProjDistPath/README.*", "$ProjTopdir/*.nupkg", "$ProjTopdir/tools/*.zip", $ProjHistoryPath)
     destination = $ExecutionContext.InvokeCommand.ExpandString($ProjDeliveryPath)
     Verbose = $true
   }
