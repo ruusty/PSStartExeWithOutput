@@ -11,3 +11,4 @@ packages
 *.TempPoint.ps1
 /Work
 /*.nupkg
+wrk

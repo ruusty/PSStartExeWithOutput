@@ -19,6 +19,6 @@
     <file target="tools" src="tools\ChocolateyInstall.ps1" />
     <file target="tools" src="tools\ChocolateyUninstall.ps1" />
     <file target="tools" src="tools\properties.ps1" />
-    <file target="tools" src="tools\PSStartExeWithOutput.zip" />
+    <file target="tools" src="dist\PSStartExeWithOutput.zip" />
   </files>
 </package>

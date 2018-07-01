@@ -21,8 +21,8 @@ Description:    Powershell binary cmdlet to run an executable.
 Project to create a Powershell binary cmdlet that
 
 - Returns the exit code.
-- Can optionally log StdOut to a file.
-- Can optionally log StdErr to a file.
+- Can optionally log Stdout to a file.
+- Can optionally log Stderr to a file.
 - Display the executables Stdout and Stderr to the console.
 - When `-Verbose` display Stdout and Stderr (`start-transcript` will now log it.)
 

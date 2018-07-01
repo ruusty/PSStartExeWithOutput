@@ -1,7 +1,5 @@
 @rem Build a release
 @setlocal
 cd /d %~dp0
-call psake build.psake.ps1 -properties "@{verbose=$False;VerbosePreference='Continue';DebugPreference='SilentlyContinue'}" %*
-@timeout /t 10
+call psake build.psake.ps1 -properties "@{verbose=$False;ProjMajorMinor='1.0'}" -parameters "@{VerbosePreference='SilentlyContinue';DebugPreference='SilentlyContinue'}" %*
 endlocal
-
