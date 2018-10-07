@@ -104,10 +104,9 @@ namespace RuustyPowerShellModules
 #pragma warning disable 1591
         protected override void ProcessRecord()
         {//process each item in the pipeline
-            string target = string.Format("'{0}' {1} at ", FilePath, args, WorkingDirectory);
+            string target = string.Format("'{0}' {1} at {2}", FilePath, args, WorkingDirectory);
             if (ShouldProcess(target, "Start"))
             {
-               // _asyncOp.Post(WriteProgressAsync, args);
                 try
                 {
                     task = Task<int>.Factory.StartNew(() =>
