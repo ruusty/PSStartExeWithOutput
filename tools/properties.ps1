@@ -1,15 +1,14 @@
 $Hostname = (Get-WmiObject -Class Win32_ComputerSystem -Property Name).Name
-
+$poshModFolder = ".PowershellModules"
 if ($Hostname -like "COVM*")
 {#Ched Servers
   $installRootDirPath = "$env:ProgramFiles\Ched Services\posh\Modules"
 }
 else
 {
-  $installRootDirPath = $(join-path $(join-path $env:HOMEDRIVE $env:HOMEPATH) ".PowershellModules")
+  $installRootDirPath = $((Split-Path -Path $env:LOCALAPPDATA) | Split-Path) | Join-Path -child $poshModFolder
 }
 $moduleName= "StartExeWithOutput" #Top filepath in zip file
-
 $moduleDirPath = Join-Path -Path $installRootDirPath -ChildPath $moduleName
 
 $ZipName = "PSStartExeWithOutput.zip"

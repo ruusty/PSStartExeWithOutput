@@ -203,11 +203,11 @@ properties {
 
 task default -depends build
 task test-build -depends Show-Settings,      Clean-DryRun, create-dirs, git-history, set-version, set-versionAssembly, compile, compile-nupkg
-task      build -depends Show-Settings, git-status, clean, create-dirs, git-history, set-version, set-versionAssembly, compile, compile-nupkg, tag-version, distribute
+Task      build -depends Show-Settings, git-status, clean, create-dirs, git-history, set-version, set-versionAssembly, compile, compile-nupkg, tag-version, distribute
 
 
 
-task compile -depends GetFiles, set-version, compile-visualStudio,compile-zip-single, compile-zip-multi {
+Task compile -depends  compile-visualStudio, GetFiles, compile-zip-single, compile-zip-multi {
 }
 
 task GetFiles -description "Build Deliverable zip file" -depends clean, create-dirs, set-version   {
